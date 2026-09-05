@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noman Al Hasan, CFA, FCCA, ACA, FMVA</title>
+<meta name="description" content="Noman Al Hasan — CFA Charterholder, Fellow Chartered Certified Accountant (FCCA), ACA, FMVA. CFO advisory, financial modeling, feasibility studies, and Bangladesh regulatory compliance.">
+<style>
+  :root {
+    --navy: #0b1f33;
+    --navy-light: #12314f;
+    --gold: #b9922f;
+    --gold-light: #d4b25c;
+    --ink: #1c2733;
+    --muted: #5b6b7a;
+    --paper: #fbfaf7;
+    --line: #e4e0d6;
+    --max: 1080px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+
+  /* Header / nav */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251,250,247,0.92);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .brand { font-weight: 700; letter-spacing: 0.02em; font-size: 1.05rem; color: var(--navy); text-decoration: none; }
+  .brand small { display: block; font-weight: 400; font-size: 0.72rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+  nav.links { display: flex; gap: 28px; font-size: 0.92rem; }
+  nav.links a { text-decoration: none; color: var(--muted); transition: color .15s; }
+  nav.links a:hover { color: var(--navy); }
+  .nav-toggle { display: none; }
+
+  /* Hero */
+  .hero { padding: 84px 0 64px; background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%); color: #f4f1ea; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  .eyebrow { color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.78rem; font-weight: 600; }
+  .hero h1 { font-size: clamp(2rem, 4.5vw, 3.1rem); margin: 6px 0 4px; font-weight: 700; letter-spacing: -0.01em; }
+  .hero .creds { color: var(--gold-light); font-size: 1.05rem; font-weight: 600; margin-bottom: 14px; }
+  .hero p.lede { max-width: 640px; color: #d9d5c9; font-size: 1.06rem; }
+  .hero .meta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.92rem; color: #c7c2b3; }
+  .hero .meta span { display: flex; align-items: center; gap: 8px; }
+  .cta-row { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 24px; border-radius: 3px; font-size: 0.92rem; font-weight: 600; text-decoration: none; transition: transform .15s, background .15s; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-outline { border: 1px solid rgba(244,241,234,0.4); color: #f4f1ea; }
+  .btn-outline:hover { border-color: #f4f1ea; }
+
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  h2.section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold); font-weight: 700; margin: 0 0 6px; }
+  h3.section-head { font-size: 1.7rem; margin: 0 0 28px; color: var(--navy); font-weight: 700; }
+
+  /* About */
+  .about p { max-width: 760px; color: var(--muted); font-size: 1.02rem; }
+  .about p + p { margin-top: 14px; }
+
+  /* Expertise grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; }
+  .card h4 { margin: 0 0 8px; font-size: 1rem; color: var(--navy); }
+  .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+  /* Experience timeline */
+  .timeline { border-left: 2px solid var(--line); padding-left: 26px; display: flex; flex-direction: column; gap: 30px; }
+  .job { position: relative; }
+  .job::before { content: ""; position: absolute; left: -32px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+  .job .role { font-weight: 700; color: var(--navy); font-size: 1.05rem; }
+  .job .org { color: var(--gold); font-weight: 600; font-size: 0.92rem; }
+  .job .dates { color: var(--muted); font-size: 0.82rem; margin: 2px 0 8px; }
+  .job p.desc { margin: 0; color: var(--muted); font-size: 0.94rem; max-width: 680px; }
+  .job.more .role, .job.more .org { color: var(--muted); font-weight: 600; }
+
+  /* Credentials + education */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  ul.plain { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  ul.plain li { border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+  ul.plain .t { font-weight: 700; color: var(--navy); font-size: 0.98rem; }
+  ul.plain .s { color: var(--muted); font-size: 0.86rem; margin-top: 2px; }
+
+  /* Contact */
+  .contact { background: var(--navy); color: #f4f1ea; }
+  .contact h3.section-head { color: #fff; }
+  .contact .section-title { color: var(--gold-light); }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 8px; }
+  .contact-item { display: flex; align-items: center; gap: 10px; font-size: 1rem; }
+  .contact-item a { text-decoration: none; color: #f4f1ea; border-bottom: 1px solid rgba(244,241,234,0.35); }
+  .contact-item a:hover { border-color: #f4f1ea; }
+
+  footer { padding: 26px 0; text-align: center; color: var(--muted); font-size: 0.82rem; }
+
+  @media (max-width: 720px) {
+    nav.links { display: none; }
+    .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Noman Al Hasan<small>CFA · FCCA · ACA · FMVA</small></a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Chief Financial Officer &amp; Financial Advisory Consultant</div>
+    <h1>Noman Al Hasan</h1>
+    <div class="creds">CFA · FCCA · ACA · FMVA · MBA</div>
+    <p class="lede">CFO-level financial leadership, financial modeling &amp; valuation, feasibility studies, and regulatory compliance — with 15+ years across corporate finance, banking, taxation, and investment management, and deep specialization in Bangladesh's NGO and microfinance sector.</p>
+    <div class="meta">
+      <span>📍 Dhaka, Bangladesh</span>
+      <span>⏱ 15+ years experience</span>
+      <span>🎓 One of a small number of professionals worldwide holding charters from both CFA Institute and ACCA</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <h2 class="section-title">About</h2>
+    <h3 class="section-head">Rigor, discipline, and regulatory depth</h3>
+    <p>I'm a CFA Charterholder and Fellow Chartered Certified Accountant (FCCA) with additional qualifications as an ACA (ICAEW) and FMVA (Corporate Finance Institute) — one of a small number of professionals worldwide to hold charters from both the CFA Institute and ACCA. Over 15+ years I've worked across corporate finance, financial planning, accounting, banking, taxation, and investment management.</p>
+    <p>My track record spans financial modeling and valuation, feasibility studies, budgeting, credit analysis, and risk assessment for clients in manufacturing, renewable energy, RMG/export garments, hospitality, and fintech. I currently serve as Managing Director of YAxis Advisory Ltd, CFO &amp; Head of Fintech Product Strategy at Proficient Information Systems, and Strategic CFO of Sylvan Wye Resort &amp; Agro PLC — alongside a long-standing role training CFA candidates and finance professionals at FPP Training &amp; Consultancy.</p>
+    <p>A core focus of my practice is Bangladesh's NGO and microfinance regulatory environment — MRA compliance, NBR taxation, and ICAB audit standards — supporting institutional clients through audit readiness, MIS reporting, and financial governance.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="section-title">Experience</h2>
+    <h3 class="section-head">Current roles &amp; career history</h3>
+    <div class="timeline">
+      <div class="job">
+        <div class="role">Managing Director</div>
+        <div class="org">YAxis Advisory Ltd.</div>
+        <div class="dates">Jul 2026 – Present</div>
+        <p class="desc">Leading YAxis Advisory Ltd., providing strategic financial and business advisory services.</p>
+      </div>
+      <div class="job">
+        <div class="role">CFO &amp; Head of Fintech Product Strategy</div>
+        <div class="org">Proficient Information Systems</div>
+        <div class="dates">Apr 2026 – Present</div>
+        <p class="desc">Overseeing the finance function and leading fintech product development.</p>
+      </div>
+      <div class="job">
+        <div class="role">Strategic CFO</div>
+        <div class="org">Sylvan Wye Resort &amp; Agro PLC</div>
+        <div class="dates">Feb 2026 – Present</div>
+        <p class="desc">Strategic finance leadership for a hospitality and agro-business group, having previously advised the group as a feasibility study client.</p>
+      </div>
+      <div class="job">
+        <div class="role">Financial Planner &amp; Trainer</div>
+        <div class="org">FPP Training &amp; Consultancy</div>
+        <div class="dates">Aug 2019 – Present</div>
+        <p class="desc">CFA exam preparation lecturing, financial modeling training, and financial planning advisory, run alongside current CFO/MD roles.</p>
+      </div>
+      <div class="job">
+        <div class="role">Associate Partner</div>
+        <div class="org">Green and Prudent</div>
+        <div class="dates">Jul 2020 – Jan 2026</div>
+        <p class="desc">Sustainable/green finance advisory and financial modeling.</p>
+      </div>
+      <div class="job">
+        <div class="role">Lead Financial Consultant &amp; Managing Director</div>
+        <div class="org">Genesis Advisory Ltd.</div>
+        <div class="dates">Jan 2018 – Dec 2021</div>
+        <p class="desc">Owned and led a multi-disciplinary consulting firm delivering feasibility studies and investment memorandums for manufacturing, garments, and renewable energy clients.</p>
+      </div>
+      <div class="job">
+        <div class="role">Chief Financial Officer</div>
+        <div class="org">Mona Group</div>
+        <div class="dates">Nov 2014 – Dec 2017</div>
+        <p class="desc">Group finance leadership for a diversified conglomerate — budgeting, cash flow management, and feasibility studies.</p>
+      </div>
+      <div class="job more">
+        <div class="role">Earlier career</div>
+        <div class="org">Dhaka City College · Core Commerce Care · DNS Investment Management · Emerging Credit Rating · Diamond Properties · Nabil Fashions · Mahbub Sarowar &amp; Co.</div>
+        <div class="dates">2006 – 2014</div>
+        <p class="desc">Lecturing, portfolio analysis, credit rating, accounts management, and ACCA audit training across financial services, real estate, and RMG/export sectors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <h2 class="section-title">Expertise</h2>
+    <h3 class="section-head">Where I add the most value</h3>
+    <div class="grid">
+      <div class="card"><h4>Financial Modeling &amp; Valuation</h4><p>DCF, scenario modeling, and investment memorandums for feasibility and financing decisions.</p></div>
+      <div class="card"><h4>Feasibility Studies</h4><p>End-to-end feasibility work for manufacturing, renewable energy, RMG, and hospitality clients.</p></div>
+      <div class="card"><h4>Budgeting &amp; Forecasting</h4><p>Group and departmental budgets, cash flow forecasting, and variance analysis.</p></div>
+      <div class="card"><h4>Credit &amp; Risk Analysis</h4><p>Credit rating assessment, risk management frameworks, and portfolio analysis.</p></div>
+      <div class="card"><h4>Bangladesh Regulatory Compliance</h4><p>MRA, NBR, and ICAB audit and compliance frameworks for NGOs and microfinance institutions.</p></div>
+      <div class="card"><h4>Corporate Governance</h4><p>Board resolutions, AGM compliance, and share capital structuring under the Companies Act 1994.</p></div>
+      <div class="card"><h4>Financial Systems &amp; Analytics</h4><p>Power BI, VBA, and Python for financial reporting, dashboards, and process automation.</p></div>
+      <div class="card"><h4>CFA Training &amp; Coaching</h4><p>CFA Level 1 exam preparation, financial modeling training, and financial planning advisory.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap two-col">
+    <div>
+      <h2 class="section-title">Credentials</h2>
+      <h3 class="section-head">Licenses &amp; certifications</h3>
+      <ul class="plain">
+        <li><div class="t">Chartered Financial Analyst (CFA)</div><div class="s">CFA Institute — Issued August 2019</div></li>
+        <li><div class="t">Fellow Chartered Certified Accountant (FCCA)</div><div class="s">Association of Chartered Certified Accountants (ACCA) — Issued August 2019</div></li>
+        <li><div class="t">ACA (Associate Chartered Accountant)</div><div class="s">ICAEW — Issued September 2023</div></li>
+        <li><div class="t">Financial Modeling &amp; Valuation Analyst (FMVA)</div><div class="s">Corporate Finance Institute — Issued February 2022</div></li>
+        <li><div class="t">Income Tax Practitioner (ITP)</div><div class="s">National Board of Revenue (NBR), Bangladesh — Issued November 2017</div></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="section-title">Education</h2>
+      <h3 class="section-head">Academic background</h3>
+      <ul class="plain">
+        <li><div class="t">Master of Business Administration (MBA), Banking</div><div class="s">University of Dhaka — 2004–2005</div></li>
+        <li><div class="t">Bachelor of Business Administration (BBA), Finance and Banking</div><div class="s">University of Dhaka — 1999–2004</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <h3 class="section-head">Let's talk</h3>
+    <p style="max-width:600px;color:#d9d5c9;">Open to CFO advisory, financial modeling, feasibility studies, and regulatory compliance engagements — as well as CFA Level 1 coaching through FPP Training &amp; Consultancy.</p>
+    <div class="contact-row">
+      <div class="contact-item">✉️ <a href="mailto:nomanalhasan@gmail.com">nomanalhasan@gmail.com</a></div>
+      <div class="contact-item">📍 Dhaka, Bangladesh</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Noman Al Hasan. All rights reserved.
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
